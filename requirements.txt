@@ -4,3 +4,5 @@ pytest
 datetime
 uuid
 Flask-SQLAlchemy
+Flask-Login
+Flask-Admin
