@@ -5,8 +5,6 @@ from werkzeug.utils import import_string
 from .userapp.models import Users, Shouts
 from . import config, db, create_database
 
-from flask_cors import CORS, cross_origin
-
 logger = logging.getLogger(__name__)
 
 
