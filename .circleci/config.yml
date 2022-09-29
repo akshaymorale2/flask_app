@@ -12,11 +12,7 @@ jobs:
           pkg-manager: pip
       - run:
           name: Run tests
-          command: |
-          pip install pytest
-          pytest
-          coverage run -m pytest
-          coverage html
+          command: pytest
 
 
 workflows:
