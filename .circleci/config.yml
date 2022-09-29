@@ -11,6 +11,9 @@ jobs:
       - python/install-packages:
           pkg-manager: pip
       - run:
+          name: install pytest
+          command: pip install pytest
+      - run:
           name: Run tests
           command: pytest
 
