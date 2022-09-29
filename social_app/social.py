@@ -1,11 +1,8 @@
 import logging
 import os
-from flask_login import LoginManager
 from flask import Flask
 from werkzeug.utils import import_string
 from .userapp.models import Users, Shouts
-from flask_admin import Admin
-from flask_admin.contrib.sqla import ModelView
 from . import config, db, create_database
 
 from flask_cors import CORS, cross_origin
@@ -33,20 +30,6 @@ def create_app(environment):
     register_blueprints(app)
 
     create_database(app)
-
-
-    login_manager = LoginManager()
-
-    login_manager.init_app(app)
-    login_manager.login_view = 'login'
-
-    @login_manager.user_loader
-    def load_user(user_id):
-        return Users.query.filter_by(id=user_id).first()
-
-    admin = Admin(app)
-    admin.add_view(ModelView(Users, db.session))
-    admin.add_view(ModelView(Shouts, db.session))
 
     return app
 
