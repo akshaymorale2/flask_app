@@ -1,5 +1,3 @@
-import sys
-sys.path.append(r"/flask_app/")
 import json
 from ..social_app.social import db
 from ..social_app.social import create_app
