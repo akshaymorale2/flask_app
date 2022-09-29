@@ -13,6 +13,7 @@ jobs:
       - run:
           name: Run tests
           command: |
+          pip install pytest
           pytest
           coverage run -m pytest
           coverage html
