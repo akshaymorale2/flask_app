@@ -37,7 +37,7 @@ def home():
 
 
 def register_blueprints(app):
-    root_folder = './social_app'
+    root_folder = 'social_app'
     print(os.getcwd())
 
     for dir_name in os.listdir(root_folder):
