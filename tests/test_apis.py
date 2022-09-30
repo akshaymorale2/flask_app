@@ -1,3 +1,5 @@
+import sys
+sys.path.append(r"/home/circleci/project")
 import json
 from ..social_app.social import db
 from ..social_app.social import create_app
