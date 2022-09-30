@@ -21,6 +21,8 @@ jobs:
       - run:
           name: Run tests
           command: pytest
+      - store_test_results:
+          path: tests
 
 
 workflows:
