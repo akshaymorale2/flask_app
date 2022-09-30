@@ -11,11 +11,6 @@ jobs:
       - python/install-packages:
           pkg-manager: pip
       - run:
-          name: Setup Environment Variables
-          command: |
-            echo 'export PATH="$GOPATH"/bin:"$PATH"' >> "$BASH_ENV"
-            echo 'export GIT_SHA1="$CIRCLE_SHA1"' >> "$BASH_ENV"
-      - run:
           name: install pytest
           command: pip install pytest
       - run:
