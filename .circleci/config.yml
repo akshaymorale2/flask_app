@@ -17,6 +17,12 @@ jobs:
       - run:
           name: run tests
           command: pytest
+      - run: mkdir test-reports
+      - run: coverage report && coverage html -o test-reports/htmlcov/index.html
+      - store_test_results:
+         path: test-reports
+      - store_artifacts:
+         path: test-reports
 
 
 workflows:
