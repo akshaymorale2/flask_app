@@ -11,10 +11,13 @@ jobs:
           pkg-manager: pip
       - run:
           name: install pytest
-          command: pip install pytest
+          command: |
+          pip install pytest
+          pip install pytest-cov
       - run:
           name: run tests
-          command: pytest --cov
+          command: pytest --cov flask_app --cov-report html
+
       - codecov/upload
 
 
