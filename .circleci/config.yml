@@ -1,7 +1,6 @@
 version: 2.1
-
 orbs:
-  python: circleci/python@1.5.0
+  codecov: codecov/codecov@3
 jobs:
   build-and-test:
     docker:
@@ -16,14 +15,8 @@ jobs:
           command: pip install pytest
       - run:
           name: run tests
-          command: pytest
-          
-      - run: coverage report
-      - run: coverage html
-      - store_test_results:
-         path: htmlcov
-      - store_artifacts:
-         path: htmlcov
+          command: pytest --cov
+      - codecov/upload
 
 
 workflows:
