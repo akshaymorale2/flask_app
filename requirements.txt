@@ -1,8 +1,9 @@
 flask
 pyjwt
 pytest
+pytest-cov
 datetime
 uuid
 Flask-SQLAlchemy
-cooverage
+coverage
 
