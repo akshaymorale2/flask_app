@@ -16,10 +16,10 @@ jobs:
           command: pip install pytest
       - run:
           name: run tests
-          command: |
-          pytest
-          coverage report
-          coverage html
+          command: pytest
+          
+      - run: coverage report
+      - run: coverage html
       - store_test_results:
          path: htmlcov
       - store_artifacts:
