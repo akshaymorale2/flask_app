@@ -6,5 +6,5 @@
  </a>
  
  
- .. image:: https://codecov.io/gh/akshaymorale2/flask_app/branch/main/graph/badge.svg?token=1X3J7O79DP 
+.. image:: https://codecov.io/gh/akshaymorale2/flask_app/branch/main/graph/badge.svg?token=1X3J7O79DP 
  :target: https://codecov.io/gh/akshaymorale2/flask_app
