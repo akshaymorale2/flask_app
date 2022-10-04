@@ -10,7 +10,3 @@ flags:
   backend:
     paths:
       - flask_app/
-
-  tests:
-    path:
-      - tests/
