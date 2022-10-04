@@ -13,8 +13,7 @@ jobs:
       - run:
           name: pytest
           command: pip install pytest
-      - run: pytest
-      - run: coverage report && coverage html
+      - run: python -m pytest --junitxml=test-reports/test-results.xml --cov=./ --cov-report=xml --cov-report=html
       - codecov/upload:
           file: htmlcov
     
