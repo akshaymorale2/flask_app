@@ -5,7 +5,7 @@ coverage:
         target: 70%
         flags:
           - backend
-                    - tests
+          - tests
 
 flags:
   backend:
