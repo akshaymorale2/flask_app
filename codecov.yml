@@ -5,8 +5,13 @@ coverage:
         target: 70%
         flags:
           - backend
+                    - tests
 
 flags:
   backend:
     paths:
-      - social_app/
+      - social_app/userapp/
+
+  tests:
+    path:
+      - social_app/tests/
