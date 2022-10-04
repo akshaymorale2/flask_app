@@ -2,7 +2,7 @@ coverage:
   status:
     project:
       backend:
-        target: 90%
+        target: 100%
         flags:
           - backend
           - tests
@@ -10,8 +10,8 @@ coverage:
 flags:
   backend:
     paths:
-      - social_app/userapp/
+      - social_app/userapp*
 
   tests:
     path:
-      - social_app/tests/
+      - social_app/tests*
