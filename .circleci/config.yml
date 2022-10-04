@@ -10,6 +10,9 @@ jobs:
       - checkout
       - python/install-packages:
           pkg-manager: pip
+      - run:
+          name: pytest
+          command: pip install pytest
       - run: pytest
       - run: coverage run
       - run: coverage report && coverage html
