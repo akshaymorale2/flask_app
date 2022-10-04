@@ -1,0 +1,16 @@
+coverage:
+  status:
+    project:
+      backend:
+        target: 70%
+        flags:
+          - backend
+
+flags:
+  backend:
+    paths:
+      - Flask_app/
+
+  tests:
+    path:
+      - tests/
