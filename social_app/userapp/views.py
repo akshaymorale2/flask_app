@@ -92,43 +92,43 @@ def social_login_user():
     return make_response('could not verify',  401, {'Authentication': '"login required"'})
 
 
-# @app.route('/getuser/<int:id>', methods=['GET'])
-# def getUser(id):
-#     if request.method == 'GET':
-#         user = Users.query.filter_by(id=id).first()
-#         print(user)
-#         if user:
-#             response_data = {
-#                 'username': user.username,
-#                 'id': user.id,
-#                 'first_name': user.first_name,
-#                 'last_name': user.last_name,
-#                 'email': user.email,
-#                 'dateOfBirth': user.dateOfBirth,
-#                 'contactNo': user.contactNumber,
-#                 'gender': user.gender,
-#                 'profilePhoto': user.profilePhoto
-#             }
-#             return jsonify(**response_data, safe=False)
-#         return jsonify("User not found!!!", safe=False)
+@app.route('/getuser/<int:id>', methods=['GET'])
+def getUser(id):
+    if request.method == 'GET':
+        user = Users.query.filter_by(id=id).first()
+        print(user)
+        if user:
+            response_data = {
+                'username': user.username,
+                'id': user.id,
+                'first_name': user.first_name,
+                'last_name': user.last_name,
+                'email': user.email,
+                'dateOfBirth': user.dateOfBirth,
+                'contactNo': user.contactNumber,
+                'gender': user.gender,
+                'profilePhoto': user.profilePhoto
+            }
+            return jsonify(**response_data, safe=False)
+        return jsonify("User not found!!!", safe=False)
 
-#
-# @app.route('/shouts/', methods=['POST'])\
-# def shouts():
-#
-#     if request.method == 'POST':
-#         shout_data = request.get_json()
-#
-#         new_shout = Shouts(
-#             user_id=shout_data['user'],
-#             textdata=shout_data['textdata'],
-#             type=shout_data['type']
-#         )
-#
-#         db.session.add(new_shout)
-#         db.session.commit()
-#
-#         return jsonify({'message': 'Shout added successfully'})
+
+@app.route('/shouts/', methods=['POST'])
+def shouts():
+
+    if request.method == 'POST':
+        shout_data = request.get_json()
+
+        new_shout = Shouts(
+            user_id=shout_data['user'],
+            textdata=shout_data['textdata'],
+            type=shout_data['type']
+        )
+
+        db.session.add(new_shout)
+        db.session.commit()
+
+        return jsonify({'message': 'Shout added successfully'})
 #
 #
 # @app.route('/shoutsList/', methods=['GET'])
@@ -179,20 +179,20 @@ def social_login_user():
 #         file_name = file.save(os.path.join(UPLOAD_FOLDER, secure_filename(file.name)))
 #         return jsonify(file_name)
 
-# @app.route('/users', methods=['GET'])
-# def get_all_users():
+@app.route('/users', methods=['GET'])
+def get_all_users():
 
-#     users = Users.query.all()
-#     result = []
-#     for user in users:
-#         user_data = {}
-#         user_data['public_id'] = user.public_id
-#         user_data['username'] = user.username
-#         user_data['password'] = user.password
+    users = Users.query.all()
+    result = []
+    for user in users:
+        user_data = {}
+        user_data['public_id'] = user.public_id
+        user_data['username'] = user.username
+        user_data['password'] = user.password
 
-#         result.append(user_data)
+        result.append(user_data)
 
-#     return jsonify({'users': result})
+    return jsonify({'users': result})
 
 
 
