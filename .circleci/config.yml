@@ -11,7 +11,8 @@ jobs:
       - python/install-packages:
           pkg-manager: pip
       - run: pytest
-      - run: pytest --cov
+      - run: coverage run
+      - run: coverage report && coverage html
       - codecov/upload
     
 
