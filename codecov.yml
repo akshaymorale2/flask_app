@@ -1,17 +1,28 @@
-coverage:
-  status:
-    project:
-      backend:
-        target: 100%
-        flags:
-          - backend
-          - tests
-
-flags:
-  backend:
-    paths:
-      - social_app/userapp*
-
-  tests:
-    path:
-      - social_app/tests*
+flag_management:
+  default_rules: # the rules that will be followed for any flag added, generally
+    carryforward: true
+    statuses:
+      - type: project
+        target: auto
+        threshold: 1%
+      - type: patch
+        target: 90%
+  individual_flags: # exceptions to the default rules above, stated flag by flag
+    - name: social_app  #fill in your own flag name
+      paths:
+        - social_app/userapp  #fill in your own path. Note, accepts globs, not regexes
+      carryforward: true
+      statuses:
+        - type: project
+          target: 20%
+        - type: patch
+          target: 100%
+    - name: tests #fill in your own flag name
+      paths:
+        - social_app/tests  #fill in your own path. Note, accepts globs, not regexes
+      carryforward: true
+      statuses:
+        - type: project
+          target: 20%
+        - type: patch
+          target: 100%
