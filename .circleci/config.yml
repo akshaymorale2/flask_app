@@ -14,8 +14,7 @@ jobs:
           name: pytest
           command: pip install pytest
       - run: python -m pytest --junitxml=test-reports/test-results.xml --cov=./ --cov-report=xml --cov-report=html
-      - codecov/upload:
-          file: htmlcov
+      - codecov/upload
     
 
 
