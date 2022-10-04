@@ -1,0 +1,17 @@
+coverage:
+  status:
+    project:
+      backend:
+        target: 70%
+        flags:
+          - backend
+
+flags:
+  backend:
+    paths:
+      - social_app/
+      - tests/
+
+  tests:
+    path:
+      - tests/
