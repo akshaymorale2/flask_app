@@ -2,7 +2,6 @@ flask
 pyjwt
 pytest
 pytest-cov
-pytest-xdist
 datetime
 uuid
 Flask-SQLAlchemy
