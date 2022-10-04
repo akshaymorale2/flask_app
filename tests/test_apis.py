@@ -1,7 +1,7 @@
 import sys
 sys.path.append(r"/home/circleci/project/flask_app/")
 import json
-from ..social_app import db
+from ..social_app.social import db
 from ..social_app.social import create_app
 from unittest import TestCase
 
