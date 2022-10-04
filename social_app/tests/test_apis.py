@@ -1,8 +1,8 @@
 import sys
-sys.path.append(r"/Users/akshaymorale/IdeaProjects/Flask_app/")
+sys.path.append(r"/home/circleci/project/social_app/tests/")
 import json
-from ..social_app import db
-from ..social_app.social import create_app
+from .. import db
+from ..social import create_app
 from unittest import TestCase
 
 
