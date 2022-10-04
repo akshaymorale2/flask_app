@@ -15,9 +15,9 @@ jobs:
           command: pytest
       - run:
           name: coverage command
-          command: coverage run
-      - run: 
-          command: coverage report && coverage html
+          command: pytest --cov
+#       - run: 
+#           command: coverage report && coverage html
 
       - codecov/upload:
 
