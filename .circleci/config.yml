@@ -13,12 +13,16 @@ jobs:
           name: install pytest
           command: |
           pip install pytest
-          pip install pytest-cov
+          pip install coverage
       - run:
           name: run tests
-          command: pytest --cov flask_app --cov-report html
+          command: |
+          pytest
+          coverage report
+          coverage html
 
-      - codecov/upload
+      - codecov/upload:
+          file: 'htmlcov/index.html'
 
 
 workflows:
