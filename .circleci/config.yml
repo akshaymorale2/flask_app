@@ -12,11 +12,10 @@ jobs:
           pkg-manager: pip
       - run:
           name: run tests
-          command: pytest
-      - run: 
-          command: coverage report
-      - run: 
-          command: coverage html
+          command: |
+            pytest
+            coverage report
+            coverage html
 
       - codecov/upload:
 
