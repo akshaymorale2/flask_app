@@ -11,10 +11,9 @@ jobs:
           pkg-manager: pip
       - run:
           name: run tests
-          command: |
-          pytest
-          coverage report
-          coverage html
+          command: pytest
+      - run: coverage report
+      - run: coverage html
 
       - codecov/upload:
           file: 'htmlcov/index.html'
