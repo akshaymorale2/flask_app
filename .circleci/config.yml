@@ -11,11 +11,11 @@ jobs:
       - python/install-packages:
           pkg-manager: pip
       - run:
-          name: run tests
-          command: pytest
+            name: run tests
+            command: pytest
       - run:
-          name: coverage command
-          command: pytest --cov
+            name: coverage command
+            command: pytest --cov
 #       - run: 
 #           command: coverage report && coverage html
 
