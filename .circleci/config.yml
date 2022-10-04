@@ -15,7 +15,8 @@ jobs:
           command: pip install pytest
       - run: pytest
       - run: coverage report && coverage html
-      - codecov/upload
+      - codecov/upload:
+          file: htmlcov
     
 
 
