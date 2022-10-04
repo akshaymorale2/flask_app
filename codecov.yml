@@ -2,7 +2,7 @@ coverage:
   status:
     project:
       backend:
-        target: 70%
+        target: 90%
         flags:
           - backend
           - tests
