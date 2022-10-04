@@ -17,7 +17,6 @@ jobs:
       - run: coverage html
 
       - codecov/upload:
-          file: 'htmlcov/index.html'
 
 
 workflows:
