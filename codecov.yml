@@ -9,8 +9,7 @@ coverage:
 flags:
   backend:
     paths:
-      - social_app/
-      - tests/
+      - flask_app/
 
   tests:
     path:
