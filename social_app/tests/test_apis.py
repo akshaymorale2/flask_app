@@ -8,7 +8,7 @@ from unittest import TestCase
 
 class TestView(TestCase):
     def setUp(self):
-        self.app = create_app('testing')
+        self.app = create_app('development')
         self.client = self.app.test_client()
         db.create_all(app=self.app)
 
