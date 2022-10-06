@@ -5,7 +5,7 @@ db = SQLAlchemy()
 DB_NAME = "database.db"
 
 
-def create_database(app):
+def create_database():
     if not path.exists('website/' + DB_NAME):
         db.create_all(app=app)
         print('Created Database!')
