@@ -1,5 +1,5 @@
 import sys
-sys.path.append(r"/home/circleci/project/")
+sys.path.append(r"/home/circleci/project/social_app/")
 import json
 from ..social_app import db
 from ..social_app.social import create_app
