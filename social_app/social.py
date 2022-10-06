@@ -27,7 +27,7 @@ def create_app(environment):
 
     register_blueprints(app)
 
-    create_database()
+    create_database(app)
 
     return app
 
