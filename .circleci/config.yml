@@ -13,14 +13,14 @@ jobs:
       - run:
           name: pytest
           command: pip install pytest
-      - run: python -m pytest --junitxml=test-reports/test-results.xml --cov=./ --cov-report=xml --cov-report=html
+      - run: python -m pytest --cov=./ --cov-report=xml --cov-report=html
       - run:
                 name: Setup Code Climate test-reporter
                 command: |
                     # download test reporter as a static binary
-                    curl -L https://codeclimate.com/downloads/test-reporter/test-reporter-latest-linux-amd64 > ./cc-test-reporter
-                    chmod +x ./cc-test-reporter
-                    ./cc-test-reporter before-build
+                    curl -L https://codeclimate.com/downloads/test-reporter/test-reporter-latest-linux-amd64 > ./htmlcov
+                    chmod +x ./htmlcov
+                    ./htmlcov before-build
                 when: always
       - run:
           name: Send coverage report to Code Climate
