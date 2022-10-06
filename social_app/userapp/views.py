@@ -179,20 +179,20 @@ def shouts():
 #         file_name = file.save(os.path.join(UPLOAD_FOLDER, secure_filename(file.name)))
 #         return jsonify(file_name)
 
-@app.route('/users', methods=['GET'])
-def get_all_users():
+# @app.route('/users', methods=['GET'])
+# def get_all_users():
 
-    users = Users.query.all()
-    result = []
-    for user in users:
-        user_data = {}
-        user_data['public_id'] = user.public_id
-        user_data['username'] = user.username
-        user_data['password'] = user.password
+#     users = Users.query.all()
+#     result = []
+#     for user in users:
+#         user_data = {}
+#         user_data['public_id'] = user.public_id
+#         user_data['username'] = user.username
+#         user_data['password'] = user.password
 
-        result.append(user_data)
+#         result.append(user_data)
 
-    return jsonify({'users': result})
+#     return jsonify({'users': result})
 
 
 
