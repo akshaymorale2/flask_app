@@ -6,8 +6,8 @@ jobs:
   build-and-test:
     docker:
       - image: cimg/python:3.10.4
-        nvironment:
-         - CC_TEST_REPORTER_ID: 6ac449a3006a6cac13d5f11dcf7eea3799311fe6e5dad6b0b2ecbc892ca61315
+        environment:
+           CC_TEST_REPORTER_ID: 6ac449a3006a6cac13d5f11dcf7eea3799311fe6e5dad6b0b2ecbc892ca61315
     steps:
       - checkout
       - python/install-packages:
@@ -19,7 +19,7 @@ jobs:
           name: Setup Code Climate test-reporter
           command: |
               curl -L https://codeclimate.com/downloads/test-reporter/test-reporter-latest-linux-amd64 > ./cc-test-reporter
-chmod +x ./cc-test-reporter
+              chmod +x ./cc-test-reporter
       - run:
           command: |
             ./cc-test-reporter before-build
