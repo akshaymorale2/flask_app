@@ -1,12 +1,16 @@
 coverage:
   status:
-    project:
-      default: false
-        tests:
+    project: off
+    patch: off
+
+flag_management:
+  default_rules:
+    carryforward: true
+  individual_flags:
+    - name: backend
+      paths:
+        - social/
+      statuses:
+        - type: project
           target: 100%
-          threshold: 0%
-          path: "social_app/tests"
-        app:
-          target: 100%
-          threshold: 0%
-          path: "social_app/userapp
+          threshold: 1%
