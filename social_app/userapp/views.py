@@ -92,44 +92,44 @@ def social_login_user():
     return make_response('could not verify',  401, {'Authentication': '"login required"'})
 
 
-@app.route('/getuser/<int:id>', methods=['GET'])
-def getUser(id):
-    if request.method == 'GET':
-        user = Users.query.filter_by(id=id).first()
-        print(user)
-        if user:
-            response_data = {
-                'username': user.username,
-                'id': user.id,
-                'first_name': user.first_name,
-                'last_name': user.last_name,
-                'email': user.email,
-                'dateOfBirth': user.dateOfBirth,
-                'contactNo': user.contactNumber,
-                'gender': user.gender,
-                'profilePhoto': user.profilePhoto
-            }
-            return jsonify(**response_data, safe=False)
-        return jsonify("User not found!!!", safe=False)
+# @app.route('/getuser/<int:id>', methods=['GET'])
+# def getUser(id):
+#     if request.method == 'GET':
+#         user = Users.query.filter_by(id=id).first()
+#         print(user)
+#         if user:
+#             response_data = {
+#                 'username': user.username,
+#                 'id': user.id,
+#                 'first_name': user.first_name,
+#                 'last_name': user.last_name,
+#                 'email': user.email,
+#                 'dateOfBirth': user.dateOfBirth,
+#                 'contactNo': user.contactNumber,
+#                 'gender': user.gender,
+#                 'profilePhoto': user.profilePhoto
+#             }
+#             return jsonify(**response_data, safe=False)
+#         return jsonify("User not found!!!", safe=False)
 
 
-@app.route('/shouts/', methods=['POST'])
-def shouts():
+# @app.route('/shouts/', methods=['POST'])
+# def shouts():
 
-    if request.method == 'POST':
-        shout_data = request.get_json()
+#     if request.method == 'POST':
+#         shout_data = request.get_json()
 
-        new_shout = Shouts(
-            user_id=shout_data['user'],
-            textdata=shout_data['textdata'],
-            type=shout_data['type']
-        )
+#         new_shout = Shouts(
+#             user_id=shout_data['user'],
+#             textdata=shout_data['textdata'],
+#             type=shout_data['type']
+#         )
 
-        db.session.add(new_shout)
-        db.session.commit()
+#         db.session.add(new_shout)
+#         db.session.commit()
 
-        return jsonify({'message': 'Shout added successfully'})
-#
+#         return jsonify({'message': 'Shout added successfully'})
+# #
 #
 # @app.route('/shoutsList/', methods=['GET'])
 # def shoutsList():
