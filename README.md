@@ -8,3 +8,6 @@
  
 .. image:: https://codecov.io/gh/akshaymorale2/flask_app/branch/main/graph/badge.svg?token=1X3J7O79DP 
  :target: https://codecov.io/gh/akshaymorale2/flask_app
+
+
+[![codecov](https://github.com/akshaymorale2/flask_app/actions/workflows/social.yml/badge.svg)](https://github.com/akshaymorale2/flask_app/actions/workflows/social.yml)
