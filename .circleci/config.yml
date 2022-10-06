@@ -6,6 +6,8 @@ jobs:
   build-and-test:
     docker:
       - image: cimg/python:3.10.4
+        nvironment:
+         - CC_TEST_REPORTER_ID: 6ac449a3006a6cac13d5f11dcf7eea3799311fe6e5dad6b0b2ecbc892ca61315
     steps:
       - checkout
       - python/install-packages:
@@ -13,27 +15,20 @@ jobs:
       - run:
           name: pytest
           command: pip install pytest
+      - run:
+          name: Setup Code Climate test-reporter
+          command: |
+              curl -L https://codeclimate.com/downloads/test-reporter/test-reporter-latest-linux-amd64 > ./cc-test-reporter
+chmod +x ./cc-test-reporter
+      - run:
+          command: |
+            ./cc-test-reporter before-build
+              
       - run: python -m pytest --cov=./ --cov-report=xml --cov-report=html
       - run:
-                name: Setup Code Climate test-reporter
-                command: |
-                    # download test reporter as a static binary
-                    curl -L https://codeclimate.com/downloads/test-reporter/test-reporter-latest-linux-amd64 > ./htmlcov
-                    chmod +x ./htmlcov
-                    ./htmlcov before-build
-                when: always
-      - run:
-          name: Send coverage report to Code Climate
-          command:
-              # nyc report requires that nyc has already been run,
-              # which creates the .nyc_output folder containing necessary data
-              ./cc-test-reporter after-build -t lcov
-          when: always
-      # Upload results
-      - store_artifacts: # upload test coverage as artifact
-          path: ./coverage/lcov.info
-          prefix: tests
-    
+          command: |
+              ./cc-test-reporter after-build --exit-code $?
+      
 
 
 workflows:
